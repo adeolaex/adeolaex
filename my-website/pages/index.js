@@ -1,17 +1,24 @@
+import { AppBar, IconButton, Toolbar } from "@material-ui/core";
 import Head from "next/head";
 import Link from "next/link";
 export default function Home() {
   return (
     <div className="container">
       <Head>
-        <title>Create Next App</title>
+        <title>Adeola's website</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
       </Head>
-
+      <AppBar position="sticky">
+        <Toolbar variant="dense"></Toolbar>
+      </AppBar>
       <main>
         <h1 className="title">
           Learn{" "}
-          <Link href="/sub-pages/sub-page">
+          <Link href="./sub-page">
             <a>Next.js!</a>
           </Link>
         </h1>
@@ -25,12 +32,10 @@ export default function Home() {
             <h3>Documentation &rarr;</h3>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
-
           <a href="https://nextjs.org/learn" className="card">
             <h3>Learn &rarr;</h3>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
-
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
             className="card"
@@ -38,7 +43,83 @@ export default function Home() {
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
-
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>{" "}
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <h3>Examples &rarr;</h3>
+            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          </a>
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
             className="card"
@@ -57,7 +138,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
+          Made with love{" "}
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
@@ -65,11 +146,12 @@ export default function Home() {
       <style jsx>{`
         .container {
           min-height: 100vh;
-          padding: 0 0.5rem;
+
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          background-color: #f7f9fa;
         }
 
         main {
