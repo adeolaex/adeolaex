@@ -1,24 +1,28 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import IconButton from "@material-ui/core/IconButton";
-import Button from "@material-ui/core/Button";
-import Launch from "@material-ui/icons/Launch";
-import {
-  Media,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container,
-  Row,
-} from "react-bootstrap";
+import { Media, Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import useState from "react";
 import React from "react";
+import IconButton from "@material-ui/core/IconButton";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import Launch from "@material-ui/icons/Launch";
 export default function Home() {
+  const HtmlTooltip = withStyles((theme) => ({
+    tooltip: {
+      backgroundColor: "#f5f5f9",
+      color: "rgba(0, 0, 0, 0.87)",
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: "1px solid #dadde9",
+    },
+  }))(Tooltip);
   const [show, setShow] = React.useState(false);
-  const [tab, setTab] = React.useState("Home");
-
+  const [tab, setTab] = React.useState("home");
   return (
     <div>
       <Head>
@@ -27,59 +31,69 @@ export default function Home() {
       </Head>
 
       {/* 83B3F3 8AB4F8 E0E0E0 */}
-      <div className="navspacing">
-        <Navbar
-          style={{ backgroundColor: "#202124", position: "sticky" }}
-          variant="dark"
-          fixed="top"
+      <Navbar
+        style={{ backgroundColor: "#202124", position: "sticky" }}
+        variant="dark"
+        fixed="top"
+      >
+        {/* <Navbar.Brand>H</Navbar.Brand> */}
+        <Nav
+          fill
+          className="mr-auto"
+          defaultActiveKey="home"
+          onSelect={(selectedKey) => setTab(selectedKey)}
         >
-          {/* <Navbar.Brand>H</Navbar.Brand> */}
-          <Nav
-            fill
-            // className="mr-auto"
-            className="justify-content-end"
-            defaultActiveKey="Home"
-            onSelect={(selectedKey) => setTab(selectedKey)}
+          <Nav.Link href="#home" defaultValue="home" eventKey="home">
+            Home
+          </Nav.Link>
+
+          <Nav.Link
+            href="#featured"
+            defaultValue="featured"
+            eventKey="featured"
           >
-            <Nav.Link href="#Home" defaultValue="Home" eventKey="Home">
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#Featured"
-              defaultValue="Featured"
-              eventKey="Featured"
+            Featured
+          </Nav.Link>
+          <HtmlTooltip
+            title={
+              <React.Fragment>
+                <Typography color="inherit">View source code</Typography>
+              </React.Fragment>
+            }
+          >
+            <IconButton
+              aria-label="launch"
+              style={{ color: "#9AA0A6" }}
+              target="_blank"
+              href="https://github.com/adeolaex/adeolaex/tree/master/my-website"
             >
-              Featured
-            </Nav.Link>
-          </Nav>
-          <Nav fill className="mr-auto" defaultActiveKey="home">
-            <Link href="https://github.com/adeolaex/adeolaex/tree/master/my-website">
-              <IconButton aria-label="launch" style={{ color: "#9AA0A6" }}>
-                <Launch fontSize="small" />
-              </IconButton>
-            </Link>
-          </Nav>
-          <Media>
-            <Image
-              className="avatar"
-              src="/avatar.jpg" // Route of the image file
-              height={35} // Desired size with correct aspect ratio
-              width={35} // Desired size with correct aspect ratio
-              alt="Adeola Damilola Kola-Olaleye"
-            />
-          </Media>
-        </Navbar>
-      </div>
+              <Launch fontSize="small" />
+            </IconButton>
+          </HtmlTooltip>
+        </Nav>
+        <Media>
+          <Image
+            className="avatar"
+            src="/avatar.jpg" // Route of the image file
+            height={35} // Desired size with correct aspect ratio
+            width={35} // Desired size with correct aspect ratio
+            alt="Adeola Damilola Kola-Olaleye"
+          />
+        </Media>
+      </Navbar>
       <main className="main">
         <h1 className="title">
-          {tab == "Home" ? (
+          {tab == "home" ? (
             <a>
               Making the web more beautiful, fast, and open through great
               typography Making the web more beautiful, fast, and open through
-              great typography.
+              great typography
             </a>
           ) : (
-            <a>Featured</a>
+            <a>
+              Featured. This will conntain some of my work that I personally
+              cherish
+            </a>
           )}
         </h1>
       </main>
@@ -112,10 +126,6 @@ export default function Home() {
           line-height: 1.35;
           font-size: 3.5rem;
           display: block;
-        }
-        .navspacing {
-          padding-right: 2.5em;
-          padding-left: 2.5em;
         }
       `}</style>
 

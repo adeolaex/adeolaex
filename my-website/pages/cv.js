@@ -12,8 +12,25 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 import useState from "react";
 import React from "react";
+import IconButton from "@material-ui/core/IconButton";
+import Launch from "@material-ui/icons/Launch";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+
 export default function Home() {
+  const HtmlTooltip = withStyles((theme) => ({
+    tooltip: {
+      backgroundColor: "#f5f5f9",
+      color: "rgba(0, 0, 0, 0.87)",
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: "1px solid #dadde9",
+    },
+  }))(Tooltip);
   const [show, setShow] = React.useState(false);
+  const [tab, setTab] = React.useState("home");
   return (
     <div>
       <Head>
@@ -22,31 +39,52 @@ export default function Home() {
       </Head>
 
       {/* 83B3F3 8AB4F8 E0E0E0 */}
-
       <Navbar
         style={{ backgroundColor: "#202124", position: "sticky" }}
         variant="dark"
         fixed="top"
       >
         {/* <Navbar.Brand>H</Navbar.Brand> */}
-        <Nav fill className="mr-auto" defaultActiveKey="home">
-          <Nav.Link href="#home" eventKey="home">
+        <Nav
+          fill
+          className="mr-auto"
+          defaultActiveKey="home"
+          onSelect={(selectedKey) => setTab(selectedKey)}
+        >
+          <Nav.Link href="#home" defaultValue="home" eventKey="home">
             Home
           </Nav.Link>
 
-          <Nav.Link href="#link">Linkkk</Nav.Link>
-
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link
+            href="#Projects"
+            defaultValue="Projects"
+            eventKey="Projects"
+          >
+            Projects
+          </Nav.Link>
+          <Link
+            href="https://github.com/adeolaex/adeolaex/tree/master/my-website"
+            target="_blank"
+          >
+            <HtmlTooltip
+              target="_blank"
+              title={
+                <React.Fragment>
+                  <Typography color="inherit">View source code</Typography>
+                </React.Fragment>
+              }
+            >
+              <IconButton
+                aria-label="launch"
+                style={{ color: "#9AA0A6" }}
+                target="_blank"
+                style={{ display: "table-cell" }}
+                rel="noopener noreferrer"
+              >
+                <Launch fontSize="small" />
+              </IconButton>
+            </HtmlTooltip>
+          </Link>
         </Nav>
         <Media>
           <Image
@@ -58,19 +96,26 @@ export default function Home() {
           />
         </Media>
       </Navbar>
-
       <main className="main">
         <h1 className="title">
-          <a>
-            Making the web more beautiful, fast, and open through great
-            typography Making the web more beautiful, fast, and open through
-            great typography Making the web more beautiful, fast, and open
-            through great typography Making the web more beautiful, fast, and
-            open through great typography Making the web more beautiful, fast,
-            and open through great typography Making the web more beautiful,
-            fast, and open through great typography Making the web more
-            beautiful, fast, and open through great typography
-          </a>
+          {tab == "home" ? (
+            <a>
+              Making the web more beautiful, fast, and open through great
+              typography Making the web more beautiful, fast, and open through
+              great typography. Making the web more beautiful, fast, and open
+              through great typography Making the web more beautiful, fast, and
+              open through great typography. Making the web more beautiful,
+              fast, and open through great typography Making the web more
+              beautiful, fast, and open through great typography. Making the web
+              more beautiful, fast, and open through great typography Making the
+              web more beautiful, fast, and open through great typography.
+              Making the web more beautiful, fast, and open through great
+              typography Making the web more beautiful, fast, and open through
+              great typography.
+            </a>
+          ) : (
+            <a>Featured</a>
+          )}
         </h1>
       </main>
 
