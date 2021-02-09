@@ -29,10 +29,12 @@ export default function Home() {
         fixed="top"
       >
         {/* <Navbar.Brand>H</Navbar.Brand> */}
-        <Nav fill className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
+        <Nav fill className="mr-auto" defaultActiveKey="home">
+          <Nav.Link href="#home" eventKey="home">
+            Home
+          </Nav.Link>
 
-          <Nav.Link href="/">LinkKKK</Nav.Link>
+          <Nav.Link href="#link">Linkkk</Nav.Link>
 
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

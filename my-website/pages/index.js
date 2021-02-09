@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import IconButton from "@material-ui/core/IconButton";
+import Button from "@material-ui/core/Button";
+import Launch from "@material-ui/icons/Launch";
 import {
   Media,
   Navbar,
@@ -14,34 +17,47 @@ import useState from "react";
 import React from "react";
 export default function Home() {
   const [show, setShow] = React.useState(false);
+  const [tab, setTab] = React.useState("Home");
+
   return (
     <div>
       <Head>
         <title>Adeola's cloud - Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <>
-        {/* 83B3F3 8AB4F8 E0E0E0 */}
 
-        <Navbar bg="primamry" variant="dark" color="#202124">
+      {/* 83B3F3 8AB4F8 E0E0E0 */}
+      <div className="navspacing">
+        <Navbar
+          style={{ backgroundColor: "#202124", position: "sticky" }}
+          variant="dark"
+          fixed="top"
+        >
           {/* <Navbar.Brand>H</Navbar.Brand> */}
-          <Nav fill className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Link href="./cv">
-              <Nav.Link href="./cv">Link</Nav.Link>
+          <Nav
+            fill
+            // className="mr-auto"
+            className="justify-content-end"
+            defaultActiveKey="Home"
+            onSelect={(selectedKey) => setTab(selectedKey)}
+          >
+            <Nav.Link href="#Home" defaultValue="Home" eventKey="Home">
+              Home
+            </Nav.Link>
+            <Nav.Link
+              href="#Featured"
+              defaultValue="Featured"
+              eventKey="Featured"
+            >
+              Featured
+            </Nav.Link>
+          </Nav>
+          <Nav fill className="mr-auto" defaultActiveKey="home">
+            <Link href="https://github.com/adeolaex/adeolaex/tree/master/my-website">
+              <IconButton aria-label="launch" style={{ color: "#9AA0A6" }}>
+                <Launch fontSize="small" />
+              </IconButton>
             </Link>
-
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
           <Media>
             <Image
@@ -53,17 +69,25 @@ export default function Home() {
             />
           </Media>
         </Navbar>
-      </>
-      <main>
+      </div>
+      <main className="main">
         <h1 className="title">
-          <a>
-            Making the web more beautiful, fast, and open through great
-            typography
-          </a>
+          {tab == "Home" ? (
+            <a>
+              Making the web more beautiful, fast, and open through great
+              typography Making the web more beautiful, fast, and open through
+              great typography.
+            </a>
+          ) : (
+            <a>Featured</a>
+          )}
         </h1>
       </main>
 
       <style jsx>{`
+        .main {
+          //   padding-top: 20em;
+        }
         main {
           padding: 3rem 7rem;
           flex: 1;
@@ -89,17 +113,9 @@ export default function Home() {
           font-size: 3.5rem;
           display: block;
         }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
+        .navspacing {
+          padding-right: 2.5em;
+          padding-left: 2.5em;
         }
       `}</style>
 
@@ -107,17 +123,25 @@ export default function Home() {
         html,
         body {
           background-color: #202124;
-          padding: 0;
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
+
+        @media screen and (max-width: 768px) {
+          body {
+            padding-top: 0px;
+          }
+          .grid {
+            width: 100%;
+            flex-direction: column;
+          }
+        }
         .avatar {
           padding-right: 100px;
           border-radius: 50%;
-
-
+        }
         ,
         * {
         }
