@@ -27,49 +27,49 @@ export default function Home() {
       </Head>
 
       {/* 83B3F3 8AB4F8 E0E0E0 */}
-      <div className="navspacing">
-        <Navbar
-          style={{ backgroundColor: "#202124", position: "sticky" }}
-          variant="dark"
-          fixed="top"
+      {/* <div className="navspacing"> */}
+      <Navbar
+        style={{ backgroundColor: "#202124", position: "sticky" }}
+        variant="dark"
+        fixed="top"
+      >
+        {/* <Navbar.Brand>H</Navbar.Brand> */}
+        <Nav
+          fill
+          // className="mr-auto"
+          className="justify-content-end"
+          defaultActiveKey="Home"
+          onSelect={(selectedKey) => setTab(selectedKey)}
         >
-          {/* <Navbar.Brand>H</Navbar.Brand> */}
-          <Nav
-            fill
-            // className="mr-auto"
-            className="justify-content-end"
-            defaultActiveKey="Home"
-            onSelect={(selectedKey) => setTab(selectedKey)}
+          <Nav.Link href="#Home" defaultValue="Home" eventKey="Home">
+            Home
+          </Nav.Link>
+          <Nav.Link
+            href="#Featured"
+            defaultValue="Featured"
+            eventKey="Featured"
           >
-            <Nav.Link href="#Home" defaultValue="Home" eventKey="Home">
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#Featured"
-              defaultValue="Featured"
-              eventKey="Featured"
-            >
-              Featured
-            </Nav.Link>
-          </Nav>
-          <Nav fill className="mr-auto" defaultActiveKey="home">
-            <Link href="https://github.com/adeolaex/adeolaex/tree/master/my-website">
-              <IconButton aria-label="launch" style={{ color: "#9AA0A6" }}>
-                <Launch fontSize="small" />
-              </IconButton>
-            </Link>
-          </Nav>
-          <Media>
-            <Image
-              className="avatar"
-              src="/avatar.jpg" // Route of the image file
-              height={35} // Desired size with correct aspect ratio
-              width={35} // Desired size with correct aspect ratio
-              alt="Adeola Damilola Kola-Olaleye"
-            />
-          </Media>
-        </Navbar>
-      </div>
+            Featured
+          </Nav.Link>
+        </Nav>
+        <Nav fill className="mr-auto" defaultActiveKey="home">
+          <Link href="https://github.com/adeolaex/adeolaex/tree/master/my-website">
+            <IconButton aria-label="launch" style={{ color: "#9AA0A6" }}>
+              <Launch fontSize="small" />
+            </IconButton>
+          </Link>
+        </Nav>
+        <Media>
+          <Image
+            className="avatar"
+            src="/avatar.jpg" // Route of the image file
+            height={35} // Desired size with correct aspect ratio
+            width={35} // Desired size with correct aspect ratio
+            alt="Adeola Damilola Kola-Olaleye"
+          />
+        </Media>
+      </Navbar>
+      {/* </div> */}
       <main className="main">
         <h1 className="title">
           {tab == "Home" ? (
