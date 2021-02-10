@@ -98,7 +98,8 @@ export default function Home() {
               open through great typography Making the web more beautiful, fast,
               and open through great typographyMaking the web more beautiful,
               fast, and open through great typography Making the web more
-              beautiful, fast, and open through great typographyMaking the web
+              beautiful, fast, and open through great typographyMaking the
+              website
             </a>
           ) : (
             <a></a>
