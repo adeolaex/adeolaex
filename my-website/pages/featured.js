@@ -1,24 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Media,
-  Navbar,
-  Nav,
-  NavDropdown,
-  Container,
-  Row,
-} from "react-bootstrap";
+import { Media, Navbar, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import useState from "react";
 import React from "react";
 import IconButton from "@material-ui/core/IconButton";
-import Launch from "@material-ui/icons/Launch";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
-
+import Launch from "@material-ui/icons/Launch";
 export default function Home() {
   const HtmlTooltip = withStyles((theme) => ({
     tooltip: {
@@ -51,40 +43,29 @@ export default function Home() {
           defaultActiveKey="home"
           onSelect={(selectedKey) => setTab(selectedKey)}
         >
-          <Nav.Link href="#home" defaultValue="home" eventKey="home">
+          <Nav.Link defaultValue="home" eventKey="home">
             Home
           </Nav.Link>
 
-          <Nav.Link
-            href="#Projects"
-            defaultValue="Projects"
-            eventKey="Projects"
-          >
-            Projects
+          <Nav.Link defaultValue="featured" eventKey="featured">
+            Featured
           </Nav.Link>
-          <Link
-            href="https://github.com/adeolaex/adeolaex/tree/master/my-website"
-            target="_blank"
+          <HtmlTooltip
+            title={
+              <React.Fragment>
+                <Typography color="inherit">View source code</Typography>
+              </React.Fragment>
+            }
           >
-            <HtmlTooltip
+            <IconButton
+              aria-label="launch"
+              style={{ color: "#9AA0A6" }}
               target="_blank"
-              title={
-                <React.Fragment>
-                  <Typography color="inherit">View source code</Typography>
-                </React.Fragment>
-              }
+              href="https://github.com/adeolaex/adeolaex/tree/master/my-website"
             >
-              <IconButton
-                aria-label="launch"
-                style={{ color: "#9AA0A6" }}
-                target="_blank"
-                style={{ display: "table-cell" }}
-                rel="noopener noreferrer"
-              >
-                <Launch fontSize="small" />
-              </IconButton>
-            </HtmlTooltip>
-          </Link>
+              <Launch fontSize="small" />
+            </IconButton>
+          </HtmlTooltip>
         </Nav>
         <Media>
           <Image
@@ -102,19 +83,25 @@ export default function Home() {
             <a>
               Making the web more beautiful, fast, and open through great
               typography Making the web more beautiful, fast, and open through
-              great typography. Making the web more beautiful, fast, and open
+              great typography Making the web more beautiful, fast, and open
               through great typography Making the web more beautiful, fast, and
-              open through great typography. Making the web more beautiful,
+              open through great typographyMaking the web more beautiful, fast,
+              and open through great typography Making the web more beautiful,
+              fast, and open through great typographyMaking the web more
+              beautiful, fast, and open through great typography Making the web
+              more beautiful, fast, and open through great typographyMaking the
+              web more beautiful, fast, and open through great typography Making
+              the web more beautiful, fast, and open through great
+              typographyMaking the web more beautiful, fast, and open through
+              great typography Making the web more beautiful, fast, and open
+              through great typographyMaking the web more beautiful, fast, and
+              open through great typography Making the web more beautiful, fast,
+              and open through great typographyMaking the web more beautiful,
               fast, and open through great typography Making the web more
-              beautiful, fast, and open through great typography. Making the web
-              more beautiful, fast, and open through great typography Making the
-              web more beautiful, fast, and open through great typography.
-              Making the web more beautiful, fast, and open through great
-              typography Making the web more beautiful, fast, and open through
-              great typography.
+              beautiful, fast, and open through great typographyMaking the web
             </a>
           ) : (
-            <a>Featured</a>
+            <a></a>
           )}
         </h1>
       </main>

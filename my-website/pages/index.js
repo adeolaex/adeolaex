@@ -43,15 +43,11 @@ export default function Home() {
           defaultActiveKey="home"
           onSelect={(selectedKey) => setTab(selectedKey)}
         >
-          <Nav.Link href="#home" defaultValue="home" eventKey="home">
+          <Nav.Link defaultValue="home" eventKey="home">
             Home
           </Nav.Link>
 
-          <Nav.Link
-            href="#featured"
-            defaultValue="featured"
-            eventKey="featured"
-          >
+          <Nav.Link defaultValue="featured" eventKey="featured">
             Featured
           </Nav.Link>
           <HtmlTooltip
@@ -87,13 +83,25 @@ export default function Home() {
             <a>
               Making the web more beautiful, fast, and open through great
               typography Making the web more beautiful, fast, and open through
-              great typography
+              great typography Making the web more beautiful, fast, and open
+              through great typography Making the web more beautiful, fast, and
+              open through great typographyMaking the web more beautiful, fast,
+              and open through great typography Making the web more beautiful,
+              fast, and open through great typographyMaking the web more
+              beautiful, fast, and open through great typography Making the web
+              more beautiful, fast, and open through great typographyMaking the
+              web more beautiful, fast, and open through great typography Making
+              the web more beautiful, fast, and open through great
+              typographyMaking the web more beautiful, fast, and open through
+              great typography Making the web more beautiful, fast, and open
+              through great typographyMaking the web more beautiful, fast, and
+              open through great typography Making the web more beautiful, fast,
+              and open through great typographyMaking the web more beautiful,
+              fast, and open through great typography Making the web more
+              beautiful, fast, and open through great typographyMaking the web
             </a>
           ) : (
-            <a>
-              Featured. This will conntain some of my work that I personally
-              cherish
-            </a>
+            <a></a>
           )}
         </h1>
       </main>
