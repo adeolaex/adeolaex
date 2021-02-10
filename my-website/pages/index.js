@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Adeola's cloud - Software Developer</title>
+        <title lang="en">Adeola's cloud - Software Developer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* 83B3F3 8AB4F8 E0E0E0 */}
@@ -42,7 +42,13 @@ export default function Home() {
         </Nav>
         <Nav fill className="mr-auto" defaultActiveKey="home"></Nav>
         <Col xs={0} md={-1}>
-          <Image src="/avatar.jpg" roundedCircle height={42} width={42} />
+          <Image
+            src="/avatar.jpg"
+            roundedCircle
+            height={40}
+            width={40}
+            alt="Adeola Kola-Olaleye"
+          />
         </Col>
       </Navbar>
 
