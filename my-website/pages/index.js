@@ -34,6 +34,7 @@ export default function Home() {
           </Nav.Link>
           <Nav.Link
             // href="#Featured"
+
             defaultValue="Featured"
             eventKey="Featured"
           >
@@ -83,10 +84,10 @@ export default function Home() {
               beautiful, fast, and open through great typography.
             </a>
           ) : (
-            <Col xs={10} md={12}>
-              <Image src="/featured.png" fluid />
-            </Col>
-          )}
+              <Col xs={10} md={12}>
+                <Image src="/featured.png" fluid />
+              </Col>
+            )}
         </h1>
       </main>
 
