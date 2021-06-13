@@ -12,6 +12,7 @@ export default function Home() {
   const [tab, setTab] = React.useState("Home");
 
   return (
+
     <div>
       <Head>
         <title lang="en">Adeola's cloud - Software Developer</title>
@@ -84,10 +85,10 @@ export default function Home() {
               beautiful, fast, and open through great typography.
             </a>
           ) : (
-              <Col xs={10} md={12}>
-                <Image src="/featured.png" fluid />
-              </Col>
-            )}
+            <Col xs={10} md={12}>
+              <Image src="/featured.png" fluid />
+            </Col>
+          )}
         </h1>
       </main>
 
